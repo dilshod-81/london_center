@@ -1,0 +1,10 @@
+
+
+<h2>Business yangiliklari</h2>
+<h1>{{ games.title }}</h1>
+{% for news in business %}
+<p><a href="{% url 'news_detail'  news.slug %}">{{ news.title }}</a></p>
+<a href="{% url 'news_detail'  news.slug %}"> <img src="{{ news.image.url }}" width="330" alt="img"></a>
+<p>{{ news.body | truncatewords:10 }}</p>
+
+{% endfor %}

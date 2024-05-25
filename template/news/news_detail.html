@@ -1,0 +1,13 @@
+{% extends 'news/base.html' %}
+{% load static %}
+{% block content %}
+<h2>{{ news_detail.title }}</h2>
+<div>
+    <img src="{{ news_detail.image.url }} "  width="330" alt="img">
+    <p>{{ news_detail.body | linebreaks }}</p>
+</div>
+ <div class="card-footer text-center">
+<a   href="{% url 'news_update' news_detail.slug %}"><button  class="btn btn-orange">Tahrirlash </button></a>
+<a    href="{% url 'news_delete' news_detail.slug %}"><button  class="btn btn-green">O'chirish</button></a>
+</div>
+{% endblock content %}

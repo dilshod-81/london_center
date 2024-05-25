@@ -1,0 +1,13 @@
+
+
+{% extends 'news/base.html' %}
+{% load static %}
+{% block content %}
+
+<h2>Joriy yangilikni tahrirlash</h2>
+<div > <img class="img-center" src="{{ object.image.url }}" width="30%" alt="rasm">
+<form method="post" enctype="multipart/form-data"> {% csrf_token %}
+{{ form.as_p }}
+<button type="submit" class="btn btn-info ml-2">Tahrirlash</button>
+</form>
+{% endblock content %}

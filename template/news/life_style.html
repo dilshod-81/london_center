@@ -1,0 +1,9 @@
+<h2>Life & Style</h2>
+
+<h1>{{ life_style.title }}</h1>
+ {% for news in life_style %}
+    <p><a href="{% url 'news_detail'  news.slug %}">{{ news.title }}</a></p>
+    <a href="{% url 'news_detail'  news.slug %}"><img src="{{ news.image.url }}" width="330" alt="img"></a>
+    <p>{{ news.body | truncatewords:10  }}</p>
+
+{% endfor %}

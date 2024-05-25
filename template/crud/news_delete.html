@@ -1,0 +1,10 @@
+{% extends 'news/base.html' %}
+{% load static %}
+{% block content %}
+<h2>Joriy yangilikni o'chirish</h2>
+<div > <img class="img-center" src="{{ object.image.url }}" width="30%" alt="">
+<form method="post"> {% csrf_token %}
+    <p><h3><i>{{ object.title }}</i></h3>sarlavhali yangilikni o'chirmoqchimisiz?</p>
+    <button type="submit" class="btn btn-theme ml-2">Tasdiqlayman</button>
+</form>
+{% endblock content %}

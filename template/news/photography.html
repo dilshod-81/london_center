@@ -1,0 +1,9 @@
+<h2>Photography</h2>
+
+
+ {% for news in photo %}
+    <p><a href="{% url 'news_detail'  news.slug %}">{{ news.title }}</a></p>
+    <a href="{% url 'news_detail'  news.slug %}"><img src="{{ news.image.url }}" width="330" alt="img"></a>
+    <p>{{ news.body | truncatewords:10  }}</p>
+
+{% endfor %}
